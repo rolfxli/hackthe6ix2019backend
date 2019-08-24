@@ -6,10 +6,8 @@ import mongoose from 'mongoose';
 import Animal from './models/Animal';
 
 const app = express();
-
-
-//app.get('/', (req, res) => res.send('Hello World!'));
 const router = express.Router();
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -21,7 +19,7 @@ connection.once('open', () => {
     console.log('Connection established with MongoDB');
 });
 
-router.route('/Animals').get((req, res) => {
+router.route('/animals').get((req, res) => {
     Animal.find((err, animals) => {
         if (err) {
             console.log('Error occured');
