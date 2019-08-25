@@ -12,7 +12,7 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://root:EA9jXzCpOnOP@ec2-18-191-182-197.us-east-2.compute.amazonaws.com:27017/animals',
+mongoose.connect('mongodb://root:EA9jXzCpOnOP@ec2-18-191-182-197.us-east-2.compute.amazonaws.com:27017/animals?authsource=admin',
     { useNewUrlParser: true }).then(() => {
     console.log('Succesful connection');
 }).catch((err) => {
